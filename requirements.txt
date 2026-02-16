@@ -1,0 +1,6 @@
+# garak (optional — tests run without it via monkeypatched stubs)
+# pip install garak
+
+# Testing
+pytest>=8.0.0
+pytest-cov>=5.0.0
