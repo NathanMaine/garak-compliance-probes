@@ -47,7 +47,7 @@ def _patch_garak_modules(monkeypatch, tmp_path):
     data_dir = REPO_ROOT / "data"
     (garak_pkg / "data").mkdir()
     (garak_pkg / "data" / "__init__.py").write_text(
-        f"from pathlib import Path\npath = Path(r'{data_dir}')\n"
+        f"from pathlib import Path\npath = Path({str(data_dir)!r})\n"
     )
 
     # garak.probes (with Probe base and Tier)
