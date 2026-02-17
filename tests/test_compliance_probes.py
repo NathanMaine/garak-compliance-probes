@@ -767,13 +767,13 @@ class TestDetectorAttributes:
 
 
 class TestEdgeCases:
-    def test_empty_string_returns_none(self):
+    def test_empty_string_returns_zero(self):
         mod = _load_detector_module()
         det = mod.FabricatedCitation()
         attempt = _make_attempt(["", "   "])
         scores = list(det.detect(attempt))
-        assert scores[0] is None
-        assert scores[1] is None
+        assert scores[0] == 0.0
+        assert scores[1] == 0.0
 
     def test_none_output_all_detectors(self):
         mod = _load_detector_module()
